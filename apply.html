@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply | Enfield Dev Ltd</title>
+  <meta name="description" content="Apply for a web developer role at Enfield Dev Ltd. Fill in our online application form to get started." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;/&gt;</span>
+        Enfield Dev Ltd
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="team.html">Meet the Team</a></li>
+          <li><a href="job-role.html">Job Roles</a></li>
+          <li><a href="apply.html" class="active">Apply</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="about-contact.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>Apply for a Role</h1>
+      <p>Fill in the form below to start your application. We review every submission and aim to get back to you within five working days.</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- ===== APPLICATION FORM ===== -->
+        <div class="contact-form-wrapper">
+          <h2>Your Application</h2>
+          <p class="form-intro">Fields marked with a <span class="required">*</span> are required.</p>
+
+          <div class="form-success" id="applySuccess" style="display: none;">
+            <p>&#10004; Thank you for applying! We have received your application and will be in touch within five working days.</p>
+          </div>
+
+          <form id="applyForm" class="contact-form" novalidate>
+
+            <!-- Personal Details -->
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 4px;">Personal Details</h3>
+            <hr style="border: none; border-top: 2px solid var(--light-bg); margin-bottom: 16px;" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="applyFirstName">First Name <span class="required">*</span></label>
+                <input type="text" id="applyFirstName" name="applyFirstName" placeholder="e.g. Ryan" />
+                <span class="field-error" id="applyFirstNameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="applyLastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="applyLastName" name="applyLastName" placeholder="e.g. Sugon" />
+                <span class="field-error" id="applyLastNameError"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="applyEmail">Email Address <span class="required">*</span></label>
+              <input type="email" id="applyEmail" name="applyEmail" placeholder="e.g. ryan@example.com" />
+              <span class="field-error" id="applyEmailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applyPhone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="applyPhone" name="applyPhone" placeholder="e.g. 07700 900000" />
+              <span class="field-error" id="applyPhoneError"></span>
+            </div>
+
+            <!-- Role -->
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 4px; margin-top: 8px;">Role</h3>
+            <hr style="border: none; border-top: 2px solid var(--light-bg); margin-bottom: 16px;" />
+
+            <div class="form-group">
+              <label for="applyRole">Which role are you applying for? <span class="required">*</span></label>
+              <select id="applyRole" name="applyRole">
+                <option value="">-- Please select --</option>
+                <option value="trainee">Trainee Web Developer (&pound;22,000 &ndash; &pound;25,000)</option>
+                <option value="frontend">Junior Front-End Developer (&pound;26,000 &ndash; &pound;30,000)</option>
+                <option value="fullstack">Junior Full-Stack Developer (&pound;28,000 &ndash; &pound;33,000)</option>
+              </select>
+              <span class="field-error" id="applyRoleError"></span>
+            </div>
+
+            <!-- Education -->
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 4px; margin-top: 8px;">Education</h3>
+            <hr style="border: none; border-top: 2px solid var(--light-bg); margin-bottom: 16px;" />
+
+            <div class="form-group">
+              <label for="applyEducation">Highest level of qualification <span class="required">*</span></label>
+              <select id="applyEducation" name="applyEducation">
+                <option value="">-- Please select --</option>
+                <option value="gcse">GCSEs</option>
+                <option value="btec2">BTEC Level 2</option>
+                <option value="btec3">BTEC Level 3</option>
+                <option value="alevels">A Levels</option>
+                <option value="hnd">HND / Foundation Degree</option>
+                <option value="degree">Bachelor&apos;s Degree or higher</option>
+                <option value="selflearner">Self-taught / online courses</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="field-error" id="applyEducationError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="applySubject">Subject or field of study</label>
+              <input type="text" id="applySubject" name="applySubject" placeholder="e.g. IT, Web Development, Computing" />
+            </div>
+
+            <!-- Experience -->
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 4px; margin-top: 8px;">Experience</h3>
+            <hr style="border: none; border-top: 2px solid var(--light-bg); margin-bottom: 16px;" />
+
+            <div class="form-group">
+              <label for="applyExperience">How long have you been coding?</label>
+              <select id="applyExperience" name="applyExperience">
+                <option value="">-- Please select --</option>
+                <option value="0-6">Less than 6 months</option>
+                <option value="6-12">6 months to 1 year</option>
+                <option value="1-2">1 to 2 years</option>
+                <option value="2+">More than 2 years</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="applyPortfolio">Portfolio or GitHub URL (optional)</label>
+              <input type="url" id="applyPortfolio" name="applyPortfolio" placeholder="e.g. https://github.com/yourusername" />
+            </div>
+
+            <div class="form-group">
+              <label for="applyProject">Tell us about a project you have worked on</label>
+              <textarea id="applyProject" name="applyProject" rows="3" placeholder="Describe a website or coding project you are proud of..."></textarea>
+            </div>
+
+            <!-- Personal Statement -->
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 4px; margin-top: 8px;">Personal Statement</h3>
+            <hr style="border: none; border-top: 2px solid var(--light-bg); margin-bottom: 16px;" />
+
+            <div class="form-group">
+              <label for="applyStatement">Why do you want to work at Enfield Dev Ltd? <span class="required">*</span></label>
+              <textarea id="applyStatement" name="applyStatement" rows="4" placeholder="Tell us what attracts you to this role and what you hope to achieve..."></textarea>
+              <span class="field-error" id="applyStatementError"></span>
+            </div>
+
+            <!-- Practical Details -->
+            <h3 style="color: var(--primary); font-size: 1rem; margin-bottom: 4px; margin-top: 8px;">Practical Details</h3>
+            <hr style="border: none; border-top: 2px solid var(--light-bg); margin-bottom: 16px;" />
+
+            <div class="form-group">
+              <label for="applyAvailability">How soon could you start?</label>
+              <select id="applyAvailability" name="applyAvailability">
+                <option value="">-- Please select --</option>
+                <option value="immediately">Immediately</option>
+                <option value="2weeks">Within 2 weeks</option>
+                <option value="1month">Within 1 month</option>
+                <option value="3months">Within 3 months</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="applyHowHeard">How did you hear about us?</label>
+              <select id="applyHowHeard" name="applyHowHeard">
+                <option value="">-- Please select --</option>
+                <option value="google">Google / web search</option>
+                <option value="social">Social media</option>
+                <option value="friend">Friend or colleague</option>
+                <option value="school">School or college</option>
+                <option value="indeed">Indeed / job board</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Consent -->
+            <div class="form-group form-group-checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" id="applyConsent" name="applyConsent" />
+                I agree for Enfield Dev Ltd to store my personal details for recruitment purposes. <span class="required">*</span>
+              </label>
+              <span class="field-error" id="applyConsentError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Submit Application</button>
+
+          </form>
+        </div>
+
+        <!-- ===== SIDEBAR INFO ===== -->
+        <div class="contact-info">
+          <h2>What Happens Next?</h2>
+
+          <div class="info-item">
+            <div class="info-icon">&#128235;</div>
+            <div>
+              <h3>Step 1 — We Review</h3>
+              <p>We review every application carefully. You will hear back from us within five working days whether or not you are progressing.</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#128222;</div>
+            <div>
+              <h3>Step 2 — Phone Screen</h3>
+              <p>A friendly 15-minute call with Aisha from our People team. No trick questions — just a chance to say hello and answer any questions you have.</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#128187;</div>
+            <div>
+              <h3>Step 3 — Technical Interview</h3>
+              <p>A relaxed one-hour session at our Enfield office. You will walk us through a couple of your projects and complete a short practical task.</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#127881;</div>
+            <div>
+              <h3>Step 4 — Job Offer</h3>
+              <p>If we are a great match, we will make you an offer within five working days of your interview. No endless waiting around!</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#9993;</div>
+            <div>
+              <h3>Prefer to Email?</h3>
+              <p>Send your CV directly to <a href="mailto:jobs@enfielddev.co.uk">jobs@enfielddev.co.uk</a> with the job title in the subject line.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo logo-light">
+            <span class="logo-icon">&lt;/&gt;</span>
+            Enfield Dev Ltd
+          </a>
+          <p>Building the next generation of web developers in Enfield, London.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a href="job-role.html">Job Roles</a></li>
+            <li><a href="apply.html">Apply Now</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="about-contact.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-info">
+          <h4>Contact Us</h4>
+          <p>123 Hertford Road, Enfield, EN3 5JH</p>
+          <p>info@enfielddev.co.uk</p>
+          <p>020 7946 0123</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Enfield Dev Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

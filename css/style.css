@@ -1,0 +1,1641 @@
+/* ==========================================================================
+   style.css — Shared stylesheet for Enfield Dev Ltd
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS VARIABLES (custom properties)
+   -------------------------------------------------------------------------- */
+:root {
+  --primary:       #1e3a5f;   /* dark navy — main brand colour */
+  --primary-dark:  #152b47;   /* darker shade for hover states */
+  --accent:        #2563eb;   /* blue — buttons, links, highlights */
+  --accent-hover:  #1d4ed8;   /* darker blue for hover */
+  --light-bg:      #f0f4f8;   /* off-white section backgrounds */
+  --white:         #ffffff;
+  --text-dark:     #1a202c;   /* main body text */
+  --text-medium:   #4a5568;   /* secondary text */
+  --text-light:    #718096;   /* subtle captions */
+  --border:        #e2e8f0;   /* dividers and card borders */
+  --success:       #16a34a;   /* green for success messages */
+  --error-red:     #dc2626;   /* red for form validation errors */
+  --shadow-sm:     0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md:     0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-lg:     0 8px 24px rgba(0, 0, 0, 0.12);
+  --radius:        8px;
+  --radius-lg:     14px;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE STYLES
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background-color: var(--white);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. LAYOUT HELPERS
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+.section-padding-small {
+  padding: 30px 0;
+}
+
+.bg-light {
+  background-color: var(--light-bg);
+}
+
+/* --------------------------------------------------------------------------
+   4. TYPOGRAPHY HELPERS
+   -------------------------------------------------------------------------- */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-medium);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   5. BUTTONS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Primary button — solid blue */
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Outline button — transparent with border */
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* White button — for use on dark/coloured backgrounds */
+.btn-white {
+  background-color: var(--white);
+  color: var(--primary);
+  border-color: var(--white);
+}
+
+.btn-white:hover {
+  background-color: var(--light-bg);
+}
+
+/* Small variant */
+.btn-small {
+  padding: 8px 18px;
+  font-size: 0.875rem;
+}
+
+/* Full-width on mobile */
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   6. BADGES
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.badge-green {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-blue {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* --------------------------------------------------------------------------
+   7. SITE HEADER & NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  text-decoration: none;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.logo-icon {
+  background-color: var(--accent);
+  color: var(--white);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Light logo variant (footer) */
+.logo-light {
+  color: var(--white);
+  opacity: 0.9;
+}
+
+.logo-light:hover {
+  opacity: 1;
+}
+
+/* Main navigation */
+.main-nav ul {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 7px 9px;
+  border-radius: var(--radius);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.main-nav a:hover {
+  color: var(--white);
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.main-nav a.active {
+  color: var(--white);
+  background-color: var(--accent);
+}
+
+/* Hamburger toggle button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* Animate hamburger into an X when open */
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   8. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #2d5086 100%);
+  color: var(--white);
+  padding: 90px 0;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 35px;
+  max-width: 520px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Decorative code card in the hero */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.code-card {
+  background-color: #0f1d30;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-lg);
+}
+
+.code-bar {
+  background-color: #1c2d3e;
+  padding: 10px 14px;
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot-red    { background-color: #ff5f57; }
+.dot-yellow { background-color: #febc2e; }
+.dot-green  { background-color: #28c840; }
+
+.code-block {
+  padding: 20px 24px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+
+.code-block code {
+  white-space: pre;
+}
+
+/* Syntax colour helpers */
+.c-purple { color: #c084fc; }
+.c-blue   { color: #60a5fa; }
+.c-green  { color: #4ade80; }
+.c-grey   { color: #6b7280; }
+
+/* --------------------------------------------------------------------------
+   9. BENEFIT CARDS GRID
+   -------------------------------------------------------------------------- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  text-align: center;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.93rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. JOB CARDS (homepage)
+   -------------------------------------------------------------------------- */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.job-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: box-shadow 0.2s ease;
+}
+
+.job-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.job-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.job-meta {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  margin-top: 4px;
+}
+
+.job-card p {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  margin-bottom: 18px;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* --------------------------------------------------------------------------
+   11. TESTIMONIALS
+   -------------------------------------------------------------------------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  font-style: normal;
+  transition: box-shadow 0.2s ease;
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-card p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.75;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.testimonial-card footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.testimonial-card footer strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.testimonial-card footer span {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* --------------------------------------------------------------------------
+   12. CTA BANNER
+   -------------------------------------------------------------------------- */
+.cta-banner {
+  background: linear-gradient(135deg, var(--accent) 0%, #1d4ed8 100%);
+  color: var(--white);
+  padding: 70px 0;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--white);
+}
+
+.cta-banner p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+}
+
+/* --------------------------------------------------------------------------
+   13. PAGE HERO (inner pages)
+   -------------------------------------------------------------------------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #2d5086 100%);
+  color: var(--white);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   14. ABOUT PAGE — TWO COLUMN LAYOUT
+   -------------------------------------------------------------------------- */
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.two-column-text h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.two-column-text p {
+  color: var(--text-medium);
+  margin-bottom: 16px;
+  font-size: 0.97rem;
+}
+
+/* Stats grid inside the two-column layout */
+.two-column-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.stat-box {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-label {
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   15. ABOUT PAGE — VALUES
+   -------------------------------------------------------------------------- */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.value-item {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.value-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.value-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.value-item p {
+  font-size: 0.93rem;
+  color: var(--text-medium);
+}
+
+/* --------------------------------------------------------------------------
+   16. ABOUT PAGE — TEAM
+   -------------------------------------------------------------------------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.team-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  transition: box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.team-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+.team-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.team-role {
+  font-size: 0.83rem;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.team-card p {
+  font-size: 0.875rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   17. ABOUT PAGE — TECH STACK
+   -------------------------------------------------------------------------- */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.tech-item {
+  background-color: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 22px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.tech-item:hover {
+  border-color: var(--accent);
+  background-color: #eff6ff;
+}
+
+.tech-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* --------------------------------------------------------------------------
+   18. JOBS PAGE — FILTER BAR
+   -------------------------------------------------------------------------- */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 2px solid var(--border);
+  border-radius: 24px;
+  background-color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-medium);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-btn.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+/* --------------------------------------------------------------------------
+   19. JOBS PAGE — FULL JOB CARDS
+   -------------------------------------------------------------------------- */
+.job-full-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  margin-bottom: 28px;
+  transition: box-shadow 0.2s ease;
+}
+
+.job-full-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Hidden class used by JS filter */
+.job-full-card.hidden {
+  display: none;
+}
+
+.job-full-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.job-full-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.job-full-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.job-section h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--light-bg);
+}
+
+.job-section p {
+  font-size: 0.93rem;
+  color: var(--text-medium);
+  margin-bottom: 12px;
+}
+
+.job-list-items {
+  list-style: none;
+  padding: 0;
+}
+
+.job-list-items li {
+  font-size: 0.93rem;
+  color: var(--text-medium);
+  padding: 5px 0 5px 22px;
+  position: relative;
+}
+
+.job-list-items li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--success);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   20. JOBS PAGE — APPLICATION PROCESS
+   -------------------------------------------------------------------------- */
+.process-steps {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.process-step {
+  flex: 1;
+  min-width: 180px;
+  max-width: 220px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.step-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.process-step h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  line-height: 1.55;
+}
+
+.process-arrow {
+  font-size: 1.5rem;
+  color: var(--border);
+  align-self: center;
+  padding: 0 4px;
+  margin-top: -30px;
+}
+
+/* --------------------------------------------------------------------------
+   21. CONTACT PAGE — LAYOUT
+   -------------------------------------------------------------------------- */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-form-wrapper h2,
+.contact-info h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.form-intro {
+  color: var(--text-medium);
+  margin-bottom: 28px;
+  font-size: 0.95rem;
+}
+
+/* Contact form styles */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.required {
+  color: var(--error-red);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.93rem;
+  color: var(--text-dark);
+  background-color: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: auto;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Red border on invalid field after attempted submit */
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: var(--error-red);
+}
+
+.field-error {
+  font-size: 0.8rem;
+  color: var(--error-red);
+  min-height: 16px;
+}
+
+/* Checkbox group */
+.form-group-checkbox {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  font-size: 0.88rem;
+  color: var(--text-medium);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--accent);
+}
+
+/* Success banner */
+.form-success {
+  background-color: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.form-success p {
+  color: #15803d;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Contact info sidebar */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.info-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 40px;
+  text-align: center;
+}
+
+.info-item h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.info-item p {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin-bottom: 2px;
+}
+
+.info-item a {
+  color: var(--accent);
+}
+
+.info-note {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+/* Map placeholder */
+.map-placeholder {
+  background-color: var(--light-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.map-inner p {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  margin-bottom: 6px;
+}
+
+.map-note {
+  font-size: 0.8rem !important;
+  color: var(--text-light) !important;
+}
+
+/* --------------------------------------------------------------------------
+   22. CONTACT PAGE — FAQ (details/summary accordion)
+   -------------------------------------------------------------------------- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+}
+
+.faq-item summary {
+  padding: 16px 20px;
+  font-size: 0.97rem;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 1.3rem;
+  color: var(--accent);
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  padding: 0 20px 18px;
+  font-size: 0.93rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   23. SITE FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: var(--primary-dark);
+  color: rgba(255, 255, 255, 0.75);
+  padding-top: 60px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 12px;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-contact-info h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.footer-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-contact-info p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 6px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* --------------------------------------------------------------------------
+   24. RESPONSIVE — NAV COLLAPSE (max-width: 1100px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary);
+    padding: 16px 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-md);
+    z-index: 99;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   25. RESPONSIVE — TABLET LAYOUTS (max-width: 900px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+
+  /* Hero */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  /* Cards */
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* About */
+  .two-column {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Jobs */
+  .job-full-body {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .process-arrow {
+    transform: rotate(90deg);
+    margin: 4px 0;
+  }
+
+  /* Contact */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Footer */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   25. RESPONSIVE — MOBILE (max-width: 600px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .section-padding {
+    padding: 55px 0;
+  }
+
+  .hero {
+    padding: 60px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .two-column-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .job-full-card {
+    padding: 24px 18px;
+  }
+
+  .job-full-header {
+    flex-direction: column;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.5rem;
+  }
+
+  .page-hero h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   NEW PAGE STYLES
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   COURSE CARDS (courses.html)
+   Cards with external link buttons pinned to the bottom
+   -------------------------------------------------------------------------- */
+.course-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card p {
+  flex: 1;
+}
+
+.course-card .btn {
+  margin-top: 18px;
+  display: block;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   MAP PLACEHOLDER (location.html)
+   -------------------------------------------------------------------------- */
+.map-placeholder-large {
+  background: var(--light-bg);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-lg);
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  margin-bottom: 50px;
+}
+
+/* --------------------------------------------------------------------------
+   HOURS TABLE (location.html)
+   -------------------------------------------------------------------------- */
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.hours-table th {
+  text-align: left;
+  padding: 10px 14px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hours-table td {
+  padding: 9px 14px;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-medium);
+}
+
+.hours-table tr:last-child td {
+  border-bottom: none;
+}
+
+.hours-table tr:nth-child(even) td {
+  background-color: var(--light-bg);
+}
+
+/* --------------------------------------------------------------------------
+   CAREER PROGRESSION STEPS (job-role.html)
+   -------------------------------------------------------------------------- */
+.progression-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 40px;
+}
+
+.progression-step {
+  text-align: center;
+  padding: 30px 16px;
+  border: 1px solid var(--border);
+  border-right: none;
+  background-color: var(--white);
+  position: relative;
+}
+
+.progression-step:last-child {
+  border-right: 1px solid var(--border);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.progression-step:first-child {
+  border-radius: var(--radius) 0 0 var(--radius);
+  background-color: var(--light-bg);
+}
+
+.prog-level {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.prog-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.prog-salary {
+  font-size: 0.85rem;
+  color: var(--text-medium);
+}
+
+/* --------------------------------------------------------------------------
+   TEAM MEMBER SKILLS (team.html)
+   -------------------------------------------------------------------------- */
+.team-skills {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+/* --------------------------------------------------------------------------
+   APPLY FORM — FORM ROW (two columns side-by-side)
+   -------------------------------------------------------------------------- */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE — NEW PAGES (max-width: 900px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .progression-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .progression-step:nth-child(2) {
+    border-right: 1px solid var(--border);
+    border-radius: 0 var(--radius) 0 0;
+  }
+
+  .progression-step:first-child {
+    border-radius: var(--radius) 0 0 0;
+  }
+
+  .progression-step:nth-child(3) {
+    border-top: none;
+    border-radius: 0 0 0 var(--radius);
+  }
+
+  .progression-step:last-child {
+    border-top: none;
+    border-right: 1px solid var(--border);
+    border-radius: 0 0 var(--radius) 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .map-placeholder-large {
+    min-height: 180px;
+  }
+
+  .progression-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progression-step,
+  .progression-step:first-child,
+  .progression-step:nth-child(2),
+  .progression-step:nth-child(3),
+  .progression-step:last-child {
+    border-right: 1px solid var(--border);
+    border-radius: 0;
+    border-top: none;
+  }
+
+  .progression-step:first-child {
+    border-top: 1px solid var(--border);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  .progression-step:last-child {
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+}

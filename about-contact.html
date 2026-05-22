@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About &amp; Contact | Enfield Dev Ltd</title>
+  <meta name="description" content="Learn about Enfield Dev Ltd and get in touch. Our story, our values, and how to reach us." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">&lt;/&gt;</span>
+        Enfield Dev Ltd
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="team.html">Meet the Team</a></li>
+          <li><a href="job-role.html">Job Roles</a></li>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="about-contact.html" class="active">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1>About &amp; Contact</h1>
+      <p>Find out who we are, what we stand for — and how to get in touch with us.</p>
+    </div>
+  </section>
+
+  <!-- ===== OUR STORY ===== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="two-column">
+        <div class="two-column-text">
+          <h2>Our Story</h2>
+          <p>
+            Enfield Dev Ltd was founded in 2015 by two local developers, Rachel Okafor and Daniel Marsh,
+            who wanted to build a web development agency that put people first — both clients and employees.
+          </p>
+          <p>
+            What started as a two-person operation out of a small office on Hertford Road has grown into
+            a team of over 25 developers, designers, and project managers. We have delivered more than
+            300 websites and web applications for businesses across London and the South East.
+          </p>
+          <p>
+            We have always believed that the best way to grow a great company is to invest in great people.
+            That is why we actively recruit trainees and juniors — and give them the support they need to thrive.
+          </p>
+        </div>
+        <div class="two-column-stats">
+          <div class="stat-box">
+            <div class="stat-number">25+</div>
+            <div class="stat-label">Team Members</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">300+</div>
+            <div class="stat-label">Projects Delivered</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUR VALUES ===== -->
+  <section class="section-padding bg-light">
+    <div class="container">
+      <h2 class="section-title">Our Values</h2>
+      <p class="section-subtitle">These principles guide everything we do — from how we build websites to how we treat each other.</p>
+
+      <div class="values-grid">
+        <div class="value-item">
+          <div class="value-number">01</div>
+          <h3>People First</h3>
+          <p>We believe happy, supported developers write the best code. We make sure everyone on the team feels valued and heard.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-number">02</div>
+          <h3>Always Learning</h3>
+          <p>Web development moves fast. We give every team member time and budget for training, courses, and conferences.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-number">03</div>
+          <h3>Honest Communication</h3>
+          <p>We are straight with our clients and with each other. No jargon, no hiding problems — just clear, honest conversation.</p>
+        </div>
+        <div class="value-item">
+          <div class="value-number">04</div>
+          <h3>Quality Over Speed</h3>
+          <p>We would rather deliver a well-built website a week late than a buggy one on time. Good work takes the time it takes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="section-padding">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Have a question? We would love to hear from you.</p>
+
+      <div class="contact-layout">
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>Send Us a Message</h2>
+          <p class="form-intro">Fill in the form and a member of our team will reply within one working day.</p>
+
+          <div class="form-success" id="formSuccess" style="display: none;">
+            <p>&#10004; Thank you! Your message has been sent. We will be in touch shortly.</p>
+          </div>
+
+          <form id="contactForm" class="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="e.g. Jamie" />
+                <span class="field-error" id="firstNameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="e.g. Thompson" />
+                <span class="field-error" id="lastNameError"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="e.g. jamie@example.com" />
+              <span class="field-error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 07700 900000" />
+            </div>
+
+            <div class="form-group">
+              <label for="role">What is your message about? <span class="required">*</span></label>
+              <select id="role" name="role">
+                <option value="">-- Please select --</option>
+                <option value="trainee">Applying for Trainee Web Developer</option>
+                <option value="frontend">Applying for Junior Front-End Developer</option>
+                <option value="fullstack">Applying for Junior Full-Stack Developer</option>
+                <option value="general">General Enquiry</option>
+              </select>
+              <span class="field-error" id="roleError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Your Message <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us a bit about yourself or ask your question..."></textarea>
+              <span class="field-error" id="messageError"></span>
+            </div>
+
+            <div class="form-group form-group-checkbox">
+              <label class="checkbox-label">
+                <input type="checkbox" id="consent" name="consent" />
+                I agree for Enfield Dev Ltd to store my details for recruitment purposes. <span class="required">*</span>
+              </label>
+              <span class="field-error" id="consentError"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Our Details</h2>
+
+          <div class="info-item">
+            <div class="info-icon">&#128205;</div>
+            <div>
+              <h3>Address</h3>
+              <p>123 Hertford Road<br />Enfield<br />EN3 5JH</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#128222;</div>
+            <div>
+              <h3>Phone</h3>
+              <p><a href="tel:02079460123">020 7946 0123</a></p>
+              <p class="info-note">Monday to Friday, 9am &ndash; 5:30pm</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#9993;</div>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:info@enfielddev.co.uk">info@enfielddev.co.uk</a></p>
+              <p><a href="mailto:jobs@enfielddev.co.uk">jobs@enfielddev.co.uk</a> (recruitment)</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">&#128664;</div>
+            <div>
+              <h3>Getting Here</h3>
+              <p>We are a short walk from Enfield Lock station on the Lea Valley line. Free on-site parking is available. <a href="location.html">View full directions &rarr;</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo logo-light">
+            <span class="logo-icon">&lt;/&gt;</span>
+            Enfield Dev Ltd
+          </a>
+          <p>Building the next generation of web developers in Enfield, London.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a href="job-role.html">Job Roles</a></li>
+            <li><a href="apply.html">Apply Now</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="about-contact.html">About</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-info">
+          <h4>Contact Us</h4>
+          <p>123 Hertford Road, Enfield, EN3 5JH</p>
+          <p>info@enfielddev.co.uk</p>
+          <p>020 7946 0123</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Enfield Dev Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
